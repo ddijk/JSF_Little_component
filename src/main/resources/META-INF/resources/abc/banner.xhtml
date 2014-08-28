@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<!-- INTERFACE -->
+	<cc:interface >
+		<cc:actionSource name="event1" targets="myform:event1"/>
+		<cc:actionSource name="event2" targets=":myform:event2"/>
+		<cc:editableValueHolder name="username" targets="myform:username"/>
+		 
+	</cc:interface>
+
+	<!-- IMPLEMENTATION -->
+	<cc:implementation>
+		<cc:insertChildren parent=":aap:noot"/>
+		
+		<h:form id="myform">
+			<h:inputText id="username" />
+			<h:commandButton value="ok 1" id="event1"/>
+			<h:commandButton value="ok 2" id="event2"/>
+			<h:commandButton value="cc backing method" action="#{cc.doit}"/>
+			
+		</h:form>
+	</cc:implementation>
+</html>
